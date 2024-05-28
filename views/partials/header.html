@@ -1,0 +1,395 @@
+
+
+
+<header class="header">
+    <div class="header-middle sticky-header fix-top sticky-content">
+        <div class="container">
+            <div class="header-left">
+                <a href="#" class="mobile-menu-toggle">
+                    <i class="d-icon-bars2"></i>
+                </a>
+                <a href="/" class="logo">
+                    <img src="/pruebas/logo.png" alt="logo" width="153" height="44" />
+                </a>
+
+
+
+
+                <!-- End Logo -->
+
+                <div class="header-search hs-simple">
+                    <form action="/search" class="input-wrapper">
+                        <input type="text" class="form-control" name="Ntt" autocomplete="off" placeholder="Buscar"
+                            required />
+                        <button class="btn btn-search" type="submit" title="submit-button">
+                            <i class="d-icon-search"></i>
+                        </button>
+                    </form>
+                </div>
+                <!-- End Header Search -->
+            </div>
+
+            <div class="dvlm">
+                <a href="/" class="logomobile">
+                    <img src="/pruebas/logomobile.png" alt="logo" width="153" height="44" />
+                </a>
+            </div>
+
+
+
+            <div class="header-right">
+                <a href="#" class="icon-box icon-box-side">
+                    <div class="icon-box-icon mr-0 mr-lg-2">
+                        <img class="ich" src="/images/iconos/ICON_LUGAR-07.png">
+                    </div>
+                    <div class="icon-box-content d-lg-show">
+                        
+                        <h4 class="icon-box-title"> Nuestras Tiendas</h4>
+                        <p>Sedes</p>
+                    </div>
+                </a>
+                <span class="divider"></span>
+
+                <div class="dropdown login-dropdown type2 off-canvas mr-0 mr-lg-2">
+                    <a href="#" class="icon-box icon-box-side login-toggle" id="iniciarsesion">
+                        <div class="icon-box-icon mr-0 mr-lg-2">
+                            <img class="ich" src="/images/iconos/ICON_PERSONA-07.png">
+                        </div>
+                        <% if(datacliente!=null){ %>
+                            <div class="icon-box-content d-lg-show">
+                                <h4 class="icon-box-title" data-toggle="modal" data-target="#myModal"></h4>
+                                <p>Mi Perfil</p>
+                            </div>
+                            <% } else { %>
+                                <div class="icon-box-content d-lg-show">
+                                    <h4 class="icon-box-title" data-toggle="modal" data-target="#myModal">Iniciar Sesión
+                                    </h4>
+                                    <p>Registrate</p>
+                                </div>
+                                <% } %>
+
+                    </a>
+                    <div class="canvas-overlay"></div>
+                    <!-- End Cart Toggle -->
+                    <div class="dropdown-box">
+                        <div class="tab-content">
+                            <div class="login-popup">
+                                <div class="form-box">
+                                    <div class="tab tab-nav-simple tab-nav-boxed form-tab">
+
+                                        <% if(datacliente!=null){ %>
+
+                                            <div class="canvas-header" style="border-bottom:transparent">
+                                                <h4 class="canvas-title">Bienvenid@</h4>
+                                                <a href="#"
+                                                    class="btn btn-dark btn-link btn-icon-right btn-close">cerrar<i
+                                                        class="d-icon-arrow-right"></i><span class="sr-only">Iniciar
+                                                        Sesión</span></a>
+                                            </div>
+
+                                            <div class="tab-content">
+                                                <div class="tab-pane active" id="signin">
+                                                    <div class="form-group mb-3">
+                                                        ¡Hola! <%=datacliente.name%>
+                                                    </div>
+
+                                                    <div class="accordion accordion-simple">
+                                                        <div class="card">
+                                                            <div class="card-header">
+                                                                <a href="#collapse1-1" class="collapse">Perfil</a>
+                                                            </div>
+                                                            <div id="collapse1-1" class="collapsed">
+                                                                <div class="card-body">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="card">
+                                                            <div class="card-header">
+                                                                <a href="#collapse1-2" class="expand">Contraseña</a>
+                                                            </div>
+                                                            <div id="collapse1-2" class="collapsed">
+                                                                <div class="card-body">
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="card">
+                                                            <div class="card-header">
+                                                                <a href="#">Método de Pago</a>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="card">
+                                                            <div class="card-header">
+                                                                <a href="#collapse1-4" class="expand">Sigue tus
+                                                                    pedidos</a>
+                                                            </div>
+                                                            <div id="collapse1-4" class="collapsed">
+                                                                <div class="card-body">
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="card">
+                                                            <div class="card-header">
+                                                                <a href="#">Contáctanos</a>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="card">
+                                                            <div class="card-header">
+                                                                <form action="/logout?_method=DELETE" id="frmlo"
+                                                                    method="POST">
+                                                                    <a href="javascript:{}"
+                                                                        onclick="document.getElementById('frmlo').submit();">Cerrar
+                                                                        Sesion</a>
+                                                                </form>
+
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                            <% } else { %>
+
+                                                <div class="canvas-header">
+                                                    <h4 class="canvas-title">Iniciar Sesión</h4>
+                                                    <a href="#"
+                                                        class="btn btn-dark btn-link btn-icon-right btn-close">cerrar<i
+                                                            class="d-icon-arrow-right"></i><span class="sr-only">Iniciar
+                                                            Sesión</span></a>
+                                                </div>
+                                                <div class="tab-content">
+                                                    <div class="tab-pane active" id="signin">
+                                                        <form action="/login" method="post">
+                                                            <div class="form-group mb-3">
+                                                                <input type="text" class="form-control"
+                                                                    id="singin-email" name="username"
+                                                                    placeholder="Ingresa tu correo electrónico"
+                                                                    required="">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <input type="password" class="form-control"
+                                                                    id="singin-password" name="password"
+                                                                    placeholder="Ingresa tu contraseña" required="">
+                                                            </div>
+                                                            <div class="form-footer">
+                                                                <a href="#" class="lost-link">¿Olvidaste contraseña?</a>
+                                                                ¿Eres nuevo en Cohem? <a href="#register"
+                                                                    class="lost-link nav-link">Crear Cuenta</a>
+                                                            </div>
+                                                            <button class="btn btn-dark btn-block btn-rounded"
+                                                                type="submit">INICIAR SESIÓN</button>
+                                                        </form>
+                                                    </div>
+
+                                                    <div class="tab-pane" id="register">
+                                                        <form action="/registeru" method="post">
+                                                            <div class="form-group mb-3">
+                                                                <input type="text" class="form-control"
+                                                                    id="register-nombres" name="nombres"
+                                                                    placeholder="Ingresa tu nombre" required="">
+                                                            </div>
+
+                                                            <div class="form-group mb-3">
+                                                                <input type="text" class="form-control"
+                                                                    id="register-apellidos" name="apellidos"
+                                                                    placeholder="Ingresa tu apellido" required="">
+                                                            </div>
+
+                                                            <div class="form-group mb-3">
+                                                                <input type="text" class="form-control"
+                                                                    id="register-nrodocumento" name="nrodocumento"
+                                                                    placeholder="Ingresa tu DNI" required="">
+                                                            </div>
+
+                                                            <div class="form-group mb-3">
+                                                                <input type="email" class="form-control"
+                                                                    id="register-usernamereg" name="username"
+                                                                    placeholder="Ingresa un correo válido" required="">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <input type="password" class="form-control"
+                                                                    id="register-passwordreg" name="password"
+                                                                    placeholder="Crea una contraseña" required="">
+                                                            </div>
+                                                            <div class="form-footer">
+                                                                <div class="form-checkbox">
+                                                                    <input type="checkbox" class="custom-checkbox"
+                                                                        id="register-agree" name="register-agree"
+                                                                        required="">
+                                                                    <label class="form-control-label"
+                                                                        for="register-agree">Acepto términos y
+                                                                        condiciones</label>
+                                                                </div>
+                                                            </div>
+                                                            <input class="btn btn-dark btn-block btn-rounded"
+                                                                type="submit" value="Registrarme">
+                                                        </form>
+                                                    </div>
+
+                                                </div>
+
+                                                <% } %>
+
+
+
+
+
+                                    </div>
+                                </div>
+                                <button title="Close (Esc)" type="button" class="mfp-close"><span>×</span></button>
+                            </div>
+
+
+
+                        </div>
+                    </div>
+                    <!-- End Dropdown Box -->
+                </div>
+
+                <span class="divider"></span>
+                <div class="dropdown cart-dropdown type2 off-canvas mr-0 mr-lg-2">
+                    <a href="#" class="cart-toggle label-block link">
+                        <div class="cart-label d-lg-show">
+                            <span class="cart-name">Carrito:</span>
+                            <span class="cart-price shoppingCartTotal">S/ 0.00</span>
+                        </div>
+                        <img class="ich" src="/images/iconos/ICON_BOLSA-07.png"><span class="cart-count shoppingUnitTotal">0</span>
+                    </a>
+                    <div class="canvas-overlay"></div>
+                    <!-- End Cart Toggle -->
+                    <div class="dropdown-box">
+                        <div class="canvas-header">
+                            <h4 class="canvas-title">Carrito</h4>
+                            <a href="#" class="btn btn-dark btn-link btn-icon-right btn-close">cerrar<i
+                                    class="d-icon-arrow-right"></i><span class="sr-only">Carrito</span></a>
+                        </div>
+                        <div class="products scrollable shoppingCartItemsContainer">
+                        </div>
+                        <!-- End of Products  -->
+                        <div class="cart-total">
+                            <label>Subtotal:</label>
+                            <span class="price shoppingCartTotal2">S/0.00</span>
+                        </div>
+                        <!-- End of Cart Total -->
+                        <div class="cart-action">
+                            <!--<a href="cart.html" class="btn btn-dark btn-link">Ver Carrito</a>-->
+                            <a href="/Checkout" class="btn btn-dark"><span>Finalizar Compra</span></a>
+                        </div>
+                        <!-- End of Cart Action -->
+                    </div>
+                    <!-- End Dropdown Box -->
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="header-middle fix-top sticky-content hmb">
+        <div class="container">
+            <div class="header-search hs-simple">
+                <form action="search" class="input-wrapper">
+                    <input type="text" class="form-control" name="Ntt" autocomplete="off" placeholder="Buscar"
+                        required />
+                    <button class="btn btn-search" type="submit" title="submit-button">
+                        <i class="d-icon-search"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="header-middle d-lg-show coloropciones">
+        <div class="container">
+            <div class="header-left">
+                <nav class="main-nav">
+                    <ul class="menu">
+                        
+                        <li>
+                            
+                            <a href="/categoria/1/Coleccionables">Coleccionables</a>
+                            <ul>
+                                <li><a href="/scategoria/23/Classic">Classic</a></li>
+                                <li>
+                                    <a href="/scategoria/4/Funko Pop">Funko Pop</a>
+                                    <ul>
+                                        <li><a href="/tcategoria/1/Nuevos Ingresos">Nuevos Ingresos</a></li>
+                                        <li><a href="/tcategoria/2/Pops regulares">Pop´s regulares</a></li>
+                                        <li><a href="/tcategoria/3/Pops Special Edition">Pop´s Special Edition</a></li>
+                                        <li><a href="/tcategoria/4/Exclusivo Cohem">Exclusivo Cohem</a></li>
+                                        <li><a href="/tcategoria/5/Packs Funko Pop">Packs Funko Pop!</a></li>
+                                        <li><a href="/tcategoria/6/Keychain - Llaveros">Keychain - Llaveros</a></li>
+                                        <li><a href="/tcategoria/7/Calendarios de Adviento">Calendarios de Adviento</a></li>
+                                        <li><a href="/tcategoria/8/Pops Caja Dañada">Pop´s Caja Dañada</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="/scategoria/3/Banpresto">Banpresto</a></li>
+                                <li><a href="/scategoria/6/Nintendo">Nintendo</a></li>
+                                <li><a href="/scategoria/2/Bandai_Hobby">Bandai Hobby</a></li>
+                                <li><a href="/scategoria/5/League_of_Legends">League of Legends</a></li>
+                                <li><a href="/scategoria/1/Armables">Armables</a></li>
+                            </ul>
+                        </li>
+                        <span class="divider"></span>
+
+                        <li>
+                            <a href="/categoria/2/Gaming">Gaming</a>
+                            <ul>
+                                <li><a href="/scategoria/14/Mouses">Mouses</a></li>
+                                <li><a href="/scategoria/15/Teclados">Teclados</a></li>
+                                <li><a href="/scategoria/12/Audifonos">Audifonos</a></li>
+                                <li><a href="/scategoria/13/Combos_Gamer">Combos Gamer</a></li>
+                                <li><a href="/scategoria/10/Accesorios">Accesorios</a></li>
+
+                            </ul>
+                        </li>
+
+                        <span class="divider"></span>
+                        <li>
+                            <a href="/categoria/3/Videojuegos">Videojuegos</a>
+                            <ul>
+                                <li><a href="/scategoria/24/Consolas">Consolas</a></li>
+                                <li><a href="/scategoria/17/Nintendo">Nintendo</a></li>
+                                <li><a href="/scategoria/18/Ps4">Ps4</a></li>
+                                <li><a href="/scategoria/25/Accesorios">Accesorios</a></li>
+                            </ul>
+                        </li>
+
+                        <span class="divider"></span>
+                        <li>
+                            <a href="/categoria/4/Zona Geek">Zona Geek</a>
+                            <ul>
+                                <li><a href="/scategoria/27/Tazas">Tazas</a></li>
+                                <li><a href="/scategoria/22/Polos">Polos</a></li>
+                                <li><a href="/scategoria/19/Cuadros">Cuadros</a></li>
+                                <li><a href="/scategoria/26/Mochilas">Mochilas</a></li>
+                                <li><a href="/scategoria/21/Peluches">Peluches</a></li>
+                                <li><a href="/scategoria/20/Llaveros">Llaveros</a></li>
+                            </ul>
+                        </li>
+
+                        <span class="divider"></span>
+                        <li>
+                            <a href="/categoria/5/Pre-Ventas">Preventas</a>
+
+                        </li>
+
+                        <span class="divider"></span>
+                        <li>
+                            <a href="/ofertas">Ofertas</a>
+                        </li>
+
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>

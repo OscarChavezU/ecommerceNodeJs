@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <title>Cohem</title>
+
+    <meta name="keywords" content="Funko Pops" />
+    <meta name="description" content="Cohem Games">
+    <meta name="author" content="D-THEMES">
+
+    <link rel="icon" type="image/png" href="/pruebas/favicon.ico">
+
+    <link rel="preload" href="/views/fonts/cohem/MADETOMMY-Bold.woff2" as="font" type="font/woff2" crossorigin>
+
+    <script>
+        WebFontConfig = {
+            google: { families: ['Poppins:300,400,500,600,700,800'] }
+        };
+        (function (d) {
+            var wf = d.createElement('script'), s = d.scripts[0];
+            wf.src = '/js/webfont.js';
+            wf.async = true;
+            s.parentNode.insertBefore(wf, s);
+        })(document);
+    </script>
+
+    <!-- Main CSS File -->
+    <link rel="stylesheet" type="text/css" href="/css/cohem.css">
+
+
+    <link rel="stylesheet" type="text/css" href="/vendor/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="/vendor/animate/animate.min.css">
+
+    <!-- Plugins CSS File -->
+    <!--<link rel="stylesheet" type="text/css" href="/vendor/magnific-popup/magnific-popup.min.css">-->
+    <link rel="stylesheet" type="text/css" href="/vendor/owl-carousel/owl.carousel.min.css">
+    <link rel="stylesheet" type="text/css" href="/vendor/photoswipe/photoswipe.min.css">
+    <link rel="stylesheet" type="text/css" href="/vendor/photoswipe/default-skin/default-skin.min.css">
+
+    <link rel="stylesheet" type="text/css" href="/vendor/sticky-icon/stickyicon.css">
+
+    <!-- Meta Pixel Code -->
+    <script>
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return; n = f.fbq = function () {
+                n.callMethod ?
+                n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+            n.queue = []; t = b.createElement(e); t.async = !0;
+            t.src = v; s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '3266444946715932');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id=3266444946715932&ev=PageView&noscript=1" /></noscript>
+    <!-- End Meta Pixel Code -->
+
+
+</head>
+
+<body class="home">
+
+    <div class="page-wrapper">
+        <h1 class="d-none">Cohem Store</h1>
+
+
+        <%- include('partials/header.html'); %>
+
+            <!-- End Header -->
+
+
+            <main class="main mt-8 single-product">
+                <div class="page-content mb-10 pb-6">
+                    <div class="container">
+                        <div class="product product-single row mb-8">
+                            <div class="col-md-6">
+                                <div class="product-gallery">
+                                    <div
+                                        class="product-single-carousel owl-carousel owl-theme owl-nav-inner row cols-1">
+                                        <% infoproducto.listafotos.forEach((listafoto)=> { %>
+                                            <figure class="product-image">
+                                                <img src="<%= listafoto.urlfoto %>"
+                                                    data-zoom-image="<%= listafoto.urlfoto %>" alt="" width="800"
+                                                    height="900" class="imgprodz">
+                                            </figure>
+
+                                            <% }) %>
+
+                                    </div>
+                                    <div class="product-thumbs-wrap">
+                                        <div class="product-thumbs">
+                                            <% let p=1; infoproducto.listafotos.forEach((listafoto)=> {
+                                                if(p==1){
+                                                %>
+                                                <div class="product-thumb active">
+                                                    <img src="<%= listafoto.urlfoto %>" alt="product thumbnail"
+                                                        width="109" height="122">
+                                                </div>
+                                                <% } else { %>
+                                                    <div class="product-thumb ">
+                                                        <img src="<%= listafoto.urlfoto %>" alt="product thumbnail"
+                                                            width="109" height="122">
+                                                    </div>
+                                                    <% } p++; %>
+
+                                                        <% }) %>
+                                        </div>
+                                        <button class="thumb-up disabled"><i class="fas fa-chevron-left"></i></button>
+                                        <button class="thumb-down disabled"><i
+                                                class="fas fa-chevron-right"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="product-details">
+
+                                    <h1 class="product-name">
+                                        <%= infoproducto.nombre %>
+                                    </h1>
+
+
+                                    <% if(infoproducto.preciooferta>0){ %>
+
+                                        <div class="product-price">
+                                            <ins class="new-price">S/<span class="pricecrt">
+                                                    <%= infoproducto.preciooferta %>
+                                                </span>
+                                            </ins><del class="old-price">S/<%= infoproducto.precio %></del>
+                                        </div>
+                                        <% } else {%>
+                                            <div class="product-price">
+                                                <span class="price">S/ <span class="pricecrt">
+                                                        <%= infoproducto.precio %>
+                                                    </span></span>
+                                            </div>
+                                            <%} %>
+
+                                                <hr class="product-divider">
+
+                                                <div class="product-form product-qty">
+                                                    <div class="product-form-group">
+                                                        <% if(infoproducto.stock>=1){ %>
+
+                                                            <div class="input-group mr-2">
+                                                                <button class="quantity-minus d-icon-minus"></button>
+                                                                <input id="qtyprod" class="quantity form-control"
+                                                                    type="number" min="1"
+                                                                    max="<%= infoproducto.stock %>">
+                                                                <button class="quantity-plus d-icon-plus"></button>
+                                                            </div>
+
+
+                                                            <button
+                                                                class="btn-product btn-cart text-normal ls-normal font-weight-semi-bold addToCarritoProd"
+                                                                ip="<%= infoproducto.idproducto %>"><i
+                                                                    class="d-icon-bag"></i>Añadir
+                                                                al
+                                                                Carrito</button>
+
+                                                            <% } else { %>
+                                                                <div>
+                                                                    <h1 class="product-name">Sin Stock Disponible</h1>
+                                                                </div>
+
+                                                                <% } %>
+                                                    </div>
+                                                </div>
+
+                                                <hr class="product-divider">
+
+                                                <p class="product-short-desc">
+                                                    <%= infoproducto.descripcion %>
+                                                </p>
+                                                <p class="product-short-desc">
+                                                    SKU: <span>
+                                                        <%= infoproducto.codigobarra %>
+                                                    </span>
+                                                    <!--BRAND: <span class="product-brand">The Northland</span>-->
+                                                </p>
+                                                <p class="product-short-desc">
+                                                    <!--Categoria: <span>-->
+                                                        <%= infoproducto.relacionados %>
+                                                    </span>
+                                                </p>
+
+
+                                                <% if(infoproducto.nombre.includes("CUADRO")){ %>
+                                                    <p class="product-short-desc">
+                                                        <span>
+                                                            
+                                                            Cuadro de lona vinilica con marcos de melamina.<br>
+                                                            <br>
+                                                            *Medidas aproximadas:<br>
+                                                            <span style="margin-left: 10px;">Vertical (67x41)</span><br>
+                                                            <span style="margin-left: 10px;">Horizontal (41x67)</span><br>
+                                                            *Imagen referencial.<br>
+                                                            <br>
+
+                                                        </span>
+                                                    </p>
+                                                    <% } %>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!--<section class="pt-3 mt-10">
+                            <h2 class="title justify-content-center">Productos Relacionados</h2>
+
+                            <div class="owl-carousel owl-theme owl-nav-full row cols-2 cols-md-3 cols-lg-4"
+                                data-owl-options="{
+                                'items': 5,
+                                'nav': false,
+                                'loop': false,
+                                'dots': true,
+                                'margin': 20,
+                                'responsive': {
+                                    '0': {
+                                        'items': 2
+                                    },
+                                    '768': {
+                                        'items': 3
+                                    },
+                                    '992': {
+                                        'items': 6,
+                                        'dots': false,
+                                        'nav': true
+                                    }
+                                }
+                            }">
+
+                                <% for (var i=1; i <=12; i++ ) { %>
+                                    <div class="product text-center bcp">
+                                        <figure class="product-media">
+                                            <a href="product.html">
+                                                <img src="/pruebas/producto1.png" alt="Prueba 1" width="280"
+                                                    height="315" style="background-color: #f2f3f5;" />
+                                            </a>
+                                            <div class="product-label-group">
+                                                <label class="product-label label-new">Oferta</label>
+                                            </div>
+                                            <div class="product-action-vertical">
+                                                <a href="#" class="btn-product-icon btn-wishlist"
+                                                    title="Add to wishlist"><i class="d-icon-heart"></i></a>
+                                            </div>
+                                            <div class="product-action">
+                                            </div>
+                                        </figure>
+                                        <div class="product-details">
+                                            <h3 class="product-name">
+                                                <a href="product.html">Funko Pop Prueba</a>
+                                            </h3>
+                                            <div class="product-price">
+                                                <span class="price">S/ 100.00</span>
+                                            </div>
+
+                                        </div>
+                                        <div class="product-details campoadd">
+                                            <div class="">
+                                                <span>Añadir al carrito</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <% } %>
+
+                            </div>
+                        </section>-->
+
+
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <a href="#"><img src="/images/bannerfin.jpg"></a>
+                    </div>
+                </div>
+
+            </main>
+
+            <!-- End of Main -->
+            <%- include('partials/footer.html'); %>
+                <!-- End Footer -->
+    </div>
+
+
+
+    <!-- MobileMenu -->
+    <%- include('partials/menumobile.html'); %>
+
+        <!-- Plugins JS File -->
+        <script src="/vendor/jquery/jquery.min.js"></script>
+        <script src="/vendor/sticky/sticky.min.js"></script>
+        <script src="/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+        <script src="/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+        <script src="/vendor/owl-carousel/owl.carousel.min.js"></script>
+        <!--<script src="/vendor/elevatezoom/jquery.elevatezoom.min.js"></script>-->
+        <script src="/vendor/photoswipe/photoswipe.min.js"></script>
+        <script src="/vendor/photoswipe/photoswipe-ui-default.min.js"></script>
+        <!-- Main JS File -->
+        <script src="/js/main.js"></script>
+        <script src="/js/carrito.js"></script>
+</body>
+
+</html>

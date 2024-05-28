@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <title>Cohem</title>
+
+    <meta name="keywords" content="Funko Pops" />
+    <meta name="description" content="Cohem Games">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/pruebas/favicon.ico">
+    <!-- Preload Font -->
+    <!--<link rel="preload" href="fonts/riode.ttf?5gap68" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="vendor/fontawesome-free/webfonts/fa-solid-900.woff2" as="font" type="font/woff2"
+        crossorigin="anonymous">
+    <link rel="preload" href="vendor/fontawesome-free/webfonts/fa-brands-400.woff2" as="font" type="font/woff2"
+        crossorigin="anonymous">-->
+
+    <link rel="preload" href="/views/fonts/cohem/MADETOMMY-Bold.woff2" as="font" type="font/woff2" crossorigin>
+
+    <script>
+        WebFontConfig = {
+            google: { families: ['Poppins:300,400,500,600,700,800'] }
+        };
+        (function (d) {
+            var wf = d.createElement('script'), s = d.scripts[0];
+            wf.src = '/js/webfont.js';
+            wf.async = true;
+            s.parentNode.insertBefore(wf, s);
+        })(document);
+    </script>
+
+    <!-- Main CSS File -->
+    <link rel="stylesheet" type="text/css" href="/css/cohem.css">
+
+
+    <link rel="stylesheet" type="text/css" href="/vendor/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="/vendor/animate/animate.min.css">
+
+    <!-- Plugins CSS File -->
+    <link rel="stylesheet" type="text/css" href="/vendor/magnific-popup/magnific-popup.min.css">
+    <link rel="stylesheet" type="text/css" href="/vendor/owl-carousel/owl.carousel.min.css">
+    <link rel="stylesheet" type="text/css" href="/vendor/photoswipe/photoswipe.min.css">
+    <link rel="stylesheet" type="text/css" href="/vendor/photoswipe/default-skin/default-skin.min.css">
+
+    <link rel="stylesheet" type="text/css" href="/vendor/sticky-icon/stickyicon.css">
+
+    <!-- Meta Pixel Code -->
+<script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '3266444946715932');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=3266444946715932&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
+
+</head>
+
+<body class="home">
+
+    <div class="page-wrapper">
+        <h1 class="d-none">Cohem Store</h1>
+
+
+        <%- include('partials/header.html'); %>
+
+            <!-- End Header -->
+
+
+            <main class="main cc">
+
+                <div class="page-content mb-10 pb-6">
+                    <div class="container">
+                        <div class="row main-content-wrap gutter-lg">
+                            <div class="main-content">
+
+                                <!--<nav class="toolbox sticky-toolbox sticky-content fix-top">
+                                    <div class="toolbox-left">
+                                        <a href="#"
+                                            class="toolbox-item left-sidebar-toggle btn btn-outline btn-primary btn-rounded btn-icon-right">Filter<i
+                                                class="d-icon-arrow-right"></i></a>
+                                        <div class="toolbox-item toolbox-sort select-box text-dark">
+                                            <label>Sort By :</label>
+                                            <select name="orderby" class="form-control">
+                                                <option value="default">Default</option>
+                                                <option value="popularity" selected="selected">Most Popular</option>
+                                                <option value="rating">Average rating</option>
+                                                <option value="date">Latest</option>
+                                                <option value="price-low">Sort forward price low</option>
+                                                <option value="price-high">Sort forward price high</option>
+                                                <option value="">Clear custom sort</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="toolbox-right">
+                                        <div class="toolbox-item toolbox-show select-box text-dark">
+                                            <label>Show :</label>
+                                            <select name="count" class="form-control">
+                                                <option value="12">12</option>
+                                                <option value="24">24</option>
+                                                <option value="36">36</option>
+                                            </select>
+                                        </div>
+                                        <div class="toolbox-item toolbox-layout">
+                                            <a href="shop-list-mode.html" class="d-icon-mode-list btn-layout"></a>
+                                            <a href="shop.html" class="d-icon-mode-grid btn-layout active"></a>
+                                        </div>
+                                    </div>
+                                </nav>-->
+
+                                <h2 class="title title-left mb-5">
+                                    <%=categoria%>
+                                </h2>
+
+                                <div class="row cols-2 cols-sm-3 cols-md-4 cols-lg-5 product-wrapper">
+
+                                    <% listaproductos.forEach((novedad)=> { %>
+
+                                        <% if(novedad.urlfoto!=null){ %>
+
+
+                                            <div class="product-wrap">
+                                                <div class="product text-center bcp">
+                                                    <figure class="product-media">
+                                                        <a
+                                                            href="/Producto/<%= novedad.idproducto %>/<%= novedad.nombre %>/<%= novedad.codigobarra%>">
+                                                            <img src="<%= novedad.urlfoto %>" alt="product" width="280"
+                                                                height="315" load="lazy" class="imagenproducto" >
+                                                        </a>
+                                                        <div class="product-label-group">
+                                                            <!--<label class="product-label label-new">new</label>-->
+                                                        </div>
+                                                        <!--<div class="product-action-vertical">
+                                                    <a href="#" class="btn-product-icon btn-cart" data-toggle="modal"
+                                                        data-target="#addCartModal" title="Add to cart"><i
+                                                            class="d-icon-bag"></i></a>
+                                                    <a href="#" class="btn-product-icon btn-wishlist"
+                                                        title="Add to wishlist"><i class="d-icon-heart"></i></a>
+                                                </div>-->
+                                                    </figure>
+                                                    <div class="product-details">
+                                                        <!--<div class="product-cat">
+                                                    <a href="shop-default-1.html">Clothing</a>
+                                                </div>-->
+                                                        <h3 class="product-name">
+                                                            <a
+                                                                href="/Producto/<%= novedad.idproducto %>/<%= novedad.nombre %>/<%= novedad.codigobarra%>" 
+                                                                class="nombreproducto">
+                                                                <%= novedad.nombre %>
+                                                            </a>
+                                                        </h3>
+
+                                                        <% if(novedad.preciooferta>0){ %>
+
+                                                            <div class="product-price">
+                                                                <ins class="new-price">S/<span class="precioproducto"><%= novedad.preciooferta %></span>
+                                                                        </ins><del class="old-price">S/<%=
+                                                                        novedad.precio %></del>
+                                                            </div>
+                                                            <% } else {%>
+                                                                <div class="product-price">
+                                                                    <span class="price">S/ <span class="precioproducto">
+                                                                            <%= novedad.precio %>
+                                                                        </span></span>
+                                                                </div>
+                                                                <%} %>
+                                                    </div>
+                                                    <div class="product-details campoadd addToCart"
+                                                        ip="<%= novedad.idproducto %>">
+                                                        <div class="addToCart" ip="<%= novedad.idproducto %>">
+                                                            <span class="addToCart"
+                                                                ip="<%= novedad.idproducto %>">Añadir al carrito</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <% } %>
+
+                                                <% }) %>
+
+
+
+                                </div>
+
+                                <!--
+                                <nav class="toolbox toolbox-pagination">
+                                    <p class="show-info">Mostrando <span>12 de 56</span> Productos</p>
+                                    <ul class="pagination">
+                                        <li class="page-item disabled">
+                                            <a class="page-link page-link-prev" href="#" aria-label="Previous" tabindex="-1"
+                                                aria-disabled="true">
+                                                <i class="d-icon-arrow-left"></i>Prev
+                                            </a>
+                                        </li>
+                                        <li class="page-item active" aria-current="page"><a class="page-link" href="#">1</a>
+                                        </li>
+                                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                        <li class="page-item page-item-dots"><a class="page-link" href="#">6</a></li>
+                                        <li class="page-item">
+                                            <a class="page-link page-link-next" href="#" aria-label="Next">
+                                                Next<i class="d-icon-arrow-right"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </nav>-->
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <a href="#"><img src="/images/bannerfin.jpg"></a>
+                    </div>
+                </div>
+
+            </main>
+
+            <!-- End of Main -->
+            <%- include('partials/footer.html'); %>
+                <!-- End Footer -->
+    </div>
+
+    
+
+    <!-- MobileMenu -->
+    <%- include('partials/menumobile.html'); %>
+
+        <!-- Plugins JS File -->
+        <script src="/vendor/jquery/jquery.min.js"></script>
+        <script src="/vendor/sticky/sticky.min.js"></script>
+        <script src="/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+        <script src="/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+        <script src="/vendor/owl-carousel/owl.carousel.min.js"></script>
+        <script src="/vendor/elevatezoom/jquery.elevatezoom.min.js"></script>
+        <script src="/vendor/photoswipe/photoswipe.min.js"></script>
+        <script src="/vendor/photoswipe/photoswipe-ui-default.min.js"></script>
+        <!-- Main JS File -->
+        <script src="/js/main.js"></script>
+        <script src="/js/carrito.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <title>Cohem</title>
+
+    <meta name="keywords" content="Funko Pops" />
+    <meta name="description" content="Cohem Games">
+    <meta name="author" content="D-THEMES">
+
+    <link rel="icon" type="image/png" href="/pruebas/favicon.ico">
+    <link rel="preload" href="/views/fonts/cohem/MADETOMMY-Bold.woff2" as="font" type="font/woff2" crossorigin>
+
+    <script>
+        WebFontConfig = {
+            google: { families: ['Poppins:300,400,500,600,700,800'] }
+        };
+        (function (d) {
+            var wf = d.createElement('script'), s = d.scripts[0];
+            wf.src = '/js/webfont.js';
+            wf.async = true;
+            s.parentNode.insertBefore(wf, s);
+        })(document);
+    </script>
+
+    <!-- Main CSS File -->
+    <link rel="stylesheet" type="text/css" href="/css/cohem.css">
+
+
+    <link rel="stylesheet" type="text/css" href="/vendor/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="/vendor/animate/animate.min.css">
+
+    <!-- Plugins CSS File -->
+    <link rel="stylesheet" type="text/css" href="/vendor/magnific-popup/magnific-popup.min.css">
+    <link rel="stylesheet" type="text/css" href="/vendor/owl-carousel/owl.carousel.min.css">
+    <link rel="stylesheet" type="text/css" href="/vendor/photoswipe/photoswipe.min.css">
+    <link rel="stylesheet" type="text/css" href="/vendor/photoswipe/default-skin/default-skin.min.css">
+
+    <link rel="stylesheet" type="text/css" href="/vendor/sticky-icon/stickyicon.css">
+
+    <style>
+        .kr-popin-modal-header-background-image {
+            background-color: #df1d1a !important;
+        }
+
+        .kr-popin-shop-name {
+            color: white !important;
+        }
+
+        .kr-popin-modal-footer {
+            /*display: none;*/
+            background-color: #df1d1a !important;
+        }
+
+        .kr-logo-mcw {
+            display: none;
+        }
+
+        .kr-header-logo {
+            background-color: #df1d1a !important;
+        }
+
+        .kr-payment-button {
+            background-color: gray !important;
+            color: black !important;
+        }
+
+        .kr-popin-button {
+            background-color: black !important;
+            width: 100% !important;
+            color: white !important;
+        }
+
+        .kr-embedded {
+            background-color: white !important;
+            z-index: 999 !important;
+        }
+
+        .kr-embedded[kr-popin].kr-help-button-inner-field .kr-popin-modal-footer .kr-whitelabel-logo img {
+            content: url(https://iziweb001b.s3.amazonaws.com/webresources/img/logo.png);
+        }
+
+    </style>
+
+    <!-- Meta Pixel Code -->
+<script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '3266444946715932');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=3266444946715932&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
+
+
+</head>
+
+<body class="home">
+
+    <div class="page-wrapper">
+        <h1 class="d-none">Cohem Store</h1>
+
+
+        <%- include('partials/header.html'); %>
+
+            <!-- End Header -->
+
+            <main class="main checkout order">
+                <div class="page-content pt-7 pb-10 mb-10 divvn">
+                    <div class="container mt-7">
+
+                        <div class="row">
+                            <div class="col-lg-7 mb-6 mb-lg-0 pr-lg-4">
+                                <h3 class="title title-simple text-left text-uppercase">Detalles de Facturación</h3>
+                                <div class="row">
+                                    <div class="col-xs-6">
+                                        <label>Nombres *</label>
+                                        <input type="text" class="form-control" name="first-name" id="nombres"
+                                            required="" />
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <label>Apellidos *</label>
+                                        <input type="text" class="form-control" name="last-name" id="apellidos"
+                                            required="" />
+                                    </div>
+                                </div>
+                                <label>Nombre de la Empresa (Opcional)</label>
+                                <input type="text" class="form-control" name="company-name" id="nombreempresa" />
+                                <label>DNI / RUC</label>
+                                <input type="text" class="form-control" name="nrodocumento" id="nrodocumento"
+                                    required="" />
+                                <label>País</label>
+                                <div class="select-box" id="pais">
+                                    <select name="country" class="form-control">
+                                        <option value="Peru" selected>Perú</option>
+                                    </select>
+                                </div>
+                                <label>Dirección *</label>
+                                <input type="text" class="form-control" name="address1" required=""
+                                    placeholder="Número de la casa y nombre de la calle" id="direccion" />
+                                <input type="text" class="form-control" name="address2"
+                                    placeholder="Apartamento, habitación, etc. (opcional)" id="nrodireccion" />
+                                <label>Localidad / Ciudad</label>
+                                <input type="text" class="form-control" name="ciudad" required="" id="ciudad" />
+
+                                <label>Región / Provincia</label>
+                                <div class="select-box">
+                                    <select name="region" id="region" class="form-control region">
+                                        <option value="Amazonas">Amazonas</option>
+                                        <option value="Ancash">Ancash</option>
+                                        <option value="Apurimac">Apurimac</option>
+                                        <option value="Arequipa">Arequipa</option>
+                                        <option value="Ayacucho">Ayacucho</option>
+                                        <option value="Cajamarca">Cajamarca</option>
+                                        <option value="Callao">Callao</option>
+                                        <option value="Cusco">Cusco</option>
+                                        <option value="Huancavelica">Huancavelica</option>
+                                        <option value="Huanuco">Huanuco</option>
+                                        <option value="Ica">Ica</option>
+                                        <option value="Junin">Junin</option>
+                                        <option value="La libertad">La libertad</option>
+                                        <option value="Lambayeque">Lambayeque</option>
+                                        <option value="Lima" selected>Lima</option>
+                                        <option value="Loreto">Loreto</option>
+                                        <option value="Madre de Dios">Madre de Dios</option>
+                                        <option value="Moquegua">Moquegua</option>
+                                        <option value="Pasco">Pasco</option>
+                                        <option value="Piura">Piura</option>
+                                        <option value="Puno">Puno</option>
+                                        <option value="San Martin">San Martin</option>
+                                        <option value="Tacna">Tacna</option>
+                                        <option value="Tumbes">Tumbes</option>
+                                        <option value="Ucayali">Ucayali</option>
+                                    </select>
+                                </div>
+
+                                <label>Distrito *</label>
+                                <input type="text" class="form-control" name="company-name" required="" id="distrito" />
+
+                                <label>Celular *</label>
+                                <input type="text" class="form-control" name="company-name" required="" id="celular" />
+
+                                <label>Correo electrónico *</label>
+                                <input type="text" class="form-control" name="company-name" required=""
+                                    id="correoelectronico" />
+
+                                <!--<div class="form-checkbox mb-6">
+                                        <input type="checkbox" class="custom-checkbox" id="different-address"
+                                            name="different-address">
+                                        <label class="form-control-label ls-s" for="different-address"><b>¿Enviar a una
+                                                direccion diferente?</b></label>
+                                    </div>-->
+
+                                <h2 class="title title-simple text-uppercase text-left">Informacion Adicional</h2>
+                                <label>Notas del Pedido (Opcional)</label>
+                                <textarea class="form-control pb-2 pt-2 mb-0" cols="30" rows="5"
+                                    placeholder="Observaciones" id="observaciones"></textarea>
+
+                                <h2 class="title title-simple text-uppercase text-left"></h2>
+                                <button type="button" class="btn btn-dark btn-rounded btn-order confcamp">Continuar con
+                                    Envío</button>
+
+                            </div>
+
+                            <aside class="col-lg-5 sticky-sidebar-wrapper">
+                                <div class="sticky-sidebar mt-1" data-sticky-options="{'bottom': 50}">
+                                    <div class="summary pt-5">
+                                        <h3 class="title title-simple text-left text-uppercase">Tu pedido</h3>
+                                        <table class="order-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Producto</th>
+                                                    <th>Total</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="cartareac">
+                                            </tbody>
+                                        </table>
+
+                                        <div id="cenv">
+
+                                            <h3 class="title title-simple text-left text-uppercase">Tipo Envio</h3>
+                                            <table class="order-table">
+                                                <tbody>
+                                                    <tr>
+                                                        <th>
+                                                            <input type="radio" name="tipoenvio" id="enviodomicilio"
+                                                                value="1" style="-webkit-appearance:auto"
+                                                                class="opcionenvio" checked> Envio a Domicilio
+                                                        </th>
+                                                        <td>
+                                                            <span class="campocostoenvio">S/ 0</span>
+                                                        </td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <th>
+                                                            <input type="radio" name="tipoenvio" id="recojoentienda"
+                                                                value="2" style="-webkit-appearance:auto"
+                                                                class="opcionenvio"> Recojo en tienda
+                                                        </th>
+                                                        <td>
+                                                            <span class="campocostorecojo">S/ 0</span>
+                                                        </td>
+                                                    </tr>
+
+
+                                                </tbody>
+                                            </table>
+                                            <table class="order-table" id="camporecojotienda">
+                                                <tr>
+                                                    <td>
+                                                        <select id="idsucursalrecojo" name="idsucursalrecojo"
+                                                            class="form-control cidsr">
+                                                            <option value="5">C.C. Arenales</option>
+                                                        </select>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            <table class="order-table">
+                                                <tbody>
+                                                    <tr class="summary-total">
+                                                        <td class="pb-0">
+                                                            <h4 class="summary-subtitle">Total</h4>
+                                                        </td>
+                                                        <td class=" pt-0 pb-0">
+                                                            <p class="summary-total-price ls-s text-primary mtfn">
+                                                                S/0.00
+                                                            </p>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+
+
+                                            <img src="/images/plin.jpg" >
+
+                                            <button type="button" class="btn btn-dark btn-rounded btn-order " onclick="regVentac()">Registrar Pedido</button>
+                                            
+
+                                        </div>
+                                        <!--<button type="button"
+                                                class="btn btn-dark btn-rounded btn-order btn-pago">Realizar el
+                                                Pedido</button>-->
+                                    </div>
+                                </div>
+                            </aside>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="page-content pt-7 pb-10 mb-10 divcn">
+                    <div class="container mt-8">
+                        <div class="order-message mr-auto ml-auto">
+                            <div class="icon-box d-inline-flex align-items-center">
+                                <div class="icon-box-icon mb-0">
+                                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 50"
+                                        enable-background="new 0 0 50 50" xml:space="preserve">
+                                        <g>
+                                            <path fill="none" stroke-width="3" stroke-linecap="round"
+                                                stroke-linejoin="bevel" stroke-miterlimit="10" d="
+                                                M33.3,3.9c-2.7-1.1-5.6-1.8-8.7-1.8c-12.3,0-22.4,10-22.4,22.4c0,12.3,10,22.4,22.4,22.4c12.3,0,22.4-10,22.4-22.4
+                                                c0-0.7,0-1.4-0.1-2.1"></path>
+                                            <polyline fill="none" stroke-width="4" stroke-linecap="round"
+                                                stroke-linejoin="bevel" stroke-miterlimit="10" points="
+                                                48,6.9 24.4,29.8 17.2,22.3 	"></polyline>
+                                        </g>
+                                    </svg>
+                                </div>
+                                <div class="icon-box-content text-left">
+                                    <h5 class="icon-box-title font-weight-bold lh-1 mb-1">Gracias!</h5>
+                                    <p class="lh-1 ls-m">Tu Orden fue recibida</p>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="order-results">
+                            <div class="overview-item">
+                                <span>Nro Orden:</span>
+                                <strong id="nrov"></strong>
+                            </div>
+                            <div class="overview-item">
+                                <span>Fecha:</span>
+                                <strong id="fechav"></strong>
+                            </div>
+                            <div class="overview-item">
+                                <span>Email:</span>
+                                <strong id="emailv"></strong>
+                            </div>
+                            <div class="overview-item">
+                                <span>Total:</span>
+                                <strong id="totalv"></strong>
+                            </div>
+                            <!--<div class="overview-item">
+                                <span>Payment method:</span>
+                                <strong>Cash on delivery</strong>
+                            </div>-->
+                        </div>
+
+                        <!--<h2 class="title title-simple text-left pt-4 font-weight-bold text-uppercase">Order Details</h2>
+                        <div class="order-details">
+                            <table class="order-details-table">
+                                <thead>
+                                    <tr class="summary-subtotal">
+                                        <td>
+                                            <h3 class="summary-subtitle">Product</h3>
+                                        </td>
+                                        <td></td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="product-name">Beige knitted shoes <span> <i class="fas fa-times"></i>
+                                                1</span></td>
+                                        <td class="product-price">$84.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="product-name">Best dark blue pedestrian <span><i
+                                                    class="fas fa-times"></i> 1</span></td>
+                                        <td class="product-price">$76.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="product-name">Women's fashion handing <span><i
+                                                    class="fas fa-times"></i>
+                                                2</span></td>
+                                        <td class="product-price">$152.00</td>
+                                    </tr>
+                                    <tr class="summary-subtotal">
+                                        <td>
+                                            <h4 class="summary-subtitle">Subtotal:</h4>
+                                        </td>
+                                        <td class="summary-subtotal-price">$312.00</td>
+                                    </tr>
+                                    <tr class="summary-subtotal">
+                                        <td>
+                                            <h4 class="summary-subtitle">Shipping:</h4>
+                                        </td>
+                                        <td class="summary-subtotal-price">Free shipping</td>
+                                    </tr>
+                                    <tr class="summary-subtotal">
+                                        <td>
+                                            <h4 class="summary-subtitle">Payment method:</h4>
+                                        </td>
+                                        <td class="summary-subtotal-price">Cash on delivery</td>
+                                    </tr>
+                                    <tr class="summary-subtotal">
+                                        <td>
+                                            <h4 class="summary-subtitle">Total:</h4>
+                                        </td>
+                                        <td>
+                                            <p class="summary-total-price">$312.00</p>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>-->
+                        <h2 class="title title-simple text-left pt-10 mb-2">Direccion de Envio</h2>
+                        <div class="address-info pb-8 mb-6">
+                            <p class="address-detail pb-2" id="direccionv">
+
+                            </p>
+
+                        </div>
+
+                        <a href="/" class="btn btn-icon-left btn-dark btn-back btn-rounded btn-md mb-4"><i
+                                class="d-icon-arrow-left"></i> Seguir Comprando</a>
+                    </div>
+                </div>
+
+            </main>
+
+
+
+            <%- include('partials/footer.html'); %>
+
+    </div>
+
+    
+
+    <%- include('partials/menumobile.html'); %>
+
+        <script src="/vendor/jquery/jquery.min.js"></script>
+        <script src="/vendor/sticky/sticky.min.js"></script>
+        <script src="/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+        <script src="/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+        <script src="/vendor/owl-carousel/owl.carousel.min.js"></script>
+        <script src="/vendor/elevatezoom/jquery.elevatezoom.min.js"></script>
+        <script src="/vendor/photoswipe/photoswipe.min.js"></script>
+        <script src="/vendor/photoswipe/photoswipe-ui-default.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.1.3/axios.min.js" integrity="sha512-0qU9M9jfqPw6FKkPafM3gy2CBAvUWnYVOfNPDYKVuRTel1PrciTj+a9P3loJB+j0QmN2Y0JYQmkBBS8W+mbezg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        
+
+        <script src="https://static-content-qas.vnforapps.com/v2/js/checkout.js?qa=true"></script>
+
+
+
+        <script src="/js/main.js"></script>
+        <script src="/js/carrito.js"></script>
+        
+        <script src="/js/checkout.js"></script>
+        <script >const ic= "<%=idcliente%>";</script>
+</body>
+
+</html>

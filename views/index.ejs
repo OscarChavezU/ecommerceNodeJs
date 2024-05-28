@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <title>Cohem</title>
+
+    <meta name="keywords" content="Funko Pops" />
+    <meta name="description" content="Cohem Games">
+    <meta name="author" content="D-THEMES">
+
+    <link rel="icon" type="image/png" href="pruebas/favicon.ico">
+
+    <link rel="preload" href="views/fonts/cohem/MADETOMMY-Bold.woff2" as="font" type="font/woff2" crossorigin>
+    <meta name="facebook-domain-verification" content="7vw2gogz1mphm4tlbpih2fvndsooqq" />
+
+    <script>
+        WebFontConfig = {
+            google: { families: ['Poppins:300,400,500,600,700,800'] }
+        };
+        (function (d) {
+            var wf = d.createElement('script'), s = d.scripts[0];
+            wf.src = 'js/webfont.js';
+            wf.async = true;
+            s.parentNode.insertBefore(wf, s);
+        })(document);
+    </script>
+
+
+    <link rel="stylesheet" type="text/css" href="/vendor/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="/vendor/animate/animate.min.css">
+
+    <!-- Plugins CSS File -->
+    <link rel="stylesheet" type="text/css" href="/vendor/magnific-popup/magnific-popup.min.css">
+    <link rel="stylesheet" type="text/css" href="/vendor/owl-carousel/owl.carousel.min.css">
+
+    <link rel="stylesheet" type="text/css" href="/vendor/sticky-icon/stickyicon.css">
+
+    <!-- Main CSS File -->
+    <link rel="stylesheet" type="text/css" href="/css/cohem.css">
+
+    <!-- Meta Pixel Code -->
+<script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '3266444946715932');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=3266444946715932&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
+
+</head>
+
+<body class="home">
+
+    <!-- Messenger Plugin de chat Code -->
+    <div id="fb-root"></div>
+
+    <!-- Your Plugin de chat code -->
+    <div id="fb-customer-chat" class="fb-customerchat">
+    </div>
+
+    <script>
+        var chatbox = document.getElementById('fb-customer-chat');
+        chatbox.setAttribute("page_id", "1755201997910166");
+        chatbox.setAttribute("attribution", "biz_inbox");
+    </script>
+
+    <!-- Your SDK code -->
+    <script>
+        window.fbAsyncInit = function () {
+            FB.init({
+                xfbml: true,
+                version: 'v15.0'
+            });
+        };
+
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = 'https://connect.facebook.net/es_ES/sdk/xfbml.customerchat.js';
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+    <div class="page-wrapper">
+        <h1 class="d-none">Cohem Store</h1>
+
+        <%- include('partials/header.html'); %>
+
+            <!-- End Header -->
+
+            <main class="main">
+                <div class="page-content">
+                    <section class="intro-section">
+                        <div class="owl-carousel owl-theme row owl-dot-inner owl-dot-white intro-slider animation-slider cols-1 gutter-no"
+                            data-owl-options="{
+                        'nav': false,
+                        'dots': true,
+                        'responsiveClass':true,
+                        'loop': false,
+                        'items': 1,
+                        'autoplay': false,
+                        'autoplayTimeout': 8000
+                    }" id="bfp">
+                            <div class="banner banner-fixed intro-slide1" style="background-color: black;">
+                                <figure>
+                                    <img src="pruebas/Banner_Web_VERANO.jpg" alt="intro-banner" width="1903" height="630"
+                                        style="background-color: black" />
+                                </figure>
+                            </div>
+                            <div class="banner banner-fixed intro-slide1" style="background-color: black;">
+                                <figure>
+                                    <img src="pruebas/Banner2.jpg" alt="intro-banner" width="1903" height="630"
+                                        style="background-color: black" />
+                                </figure>
+                            </div>
+                        </div>
+                    </section>
+
+
+                    <section class="product-wrapper container mt-6 mt-md-10 pt-4 pb-8">
+                        <h2 class="title title-left mb-5">Novedades</h2>
+                        <div class="owl-carousel owl-theme row owl-nav-full cols-2 cols-md-3 cols-lg-4"
+                            data-owl-options="{
+                        'items': 6,
+                        'nav': false,
+                        'loop': false,
+                        'dots': true,
+                        'margin': 10,
+                        'responsive': {
+                            '0': {
+                                'items': 2
+                            },
+                            '768': {
+                                'items': 4
+                            },
+                            '992': {
+                                'items': 6,
+                                'dots': false,
+                                'nav': true
+                            }
+                        }
+                    }" id="listanovedades">
+
+                            <% novedades.forEach((novedad)=> {
+                                %>
+
+                                <div class="product text-center bcp">
+                                    <figure class="product-media">
+                                        <a
+                                            href="/Producto/<%= novedad.idproducto %>/<%= novedad.nombre %>/<%= novedad.codigobarra%>">
+                                            <img src="<%= novedad.urlfoto %>" alt="<%= novedad.nombre %>" width="380"
+                                                height="415" style="background-color: #f2f3f5;"
+                                                class="imagenproducto" />
+                                        </a>
+                                        <!--<div class="product-label-group">
+                                            <label class="product-label label-new">Nuevo</label>
+                                        </div>-->
+                                        <!--<div class="product-action-vertical">
+                                            <a href="#" class="btn-product-icon btn-wishlist" title="Add to wishlist"><i
+                                                    class="d-icon-heart"></i></a>
+                                        </div>-->
+                                        <div class="product-action">
+                                            <!--<a href="#" class="btn-product btn-quickview" title="Quick View">Quick View</a>-->
+                                        </div>
+                                    </figure>
+                                    <div class="product-details">
+                                        <h3 class="product-name">
+                                            <a href="/Producto/<%= novedad.idproducto %>/<%= novedad.nombre %>/<%= novedad.codigobarra%>"
+                                                class="nombreproducto">
+                                                <%= novedad.nombre %>
+                                            </a>
+                                        </h3>
+                                        <% if(novedad.preciooferta>0){ %>
+
+                                            <div class="product-price">
+                                                <ins class="new-price">S/<span class="precioproducto"><%= novedad.preciooferta %></span>
+                                                        </ins><del class="old-price">S/<%=
+                                                        novedad.precio %></del>
+                                            </div>
+                                            <% } else {%>
+                                                <div class="product-price">
+                                                    <span class="price">S/ <span class="precioproducto">
+                                                            <%= novedad.precio %>
+                                                        </span></span>
+                                                </div>
+                                                <%} %>
+
+                                    </div>
+                                    <div class="product-details campoadd addToCart" ip="<%= novedad.idproducto %>">
+                                        <div class="addToCart" ip="<%= novedad.idproducto %>">
+                                            <span class="addToCart" ip="<%= novedad.idproducto %>">Añadir al
+                                                carrito</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <% }) %>
+                        </div>
+                    </section>
+
+
+                    <section class="product-wrapper container mt-6 mt-md-10 pt-4 pb-8">
+                        <h2 class="title title-left mb-5">Lo más vendido</h2>
+                        <div class="owl-carousel owl-theme row owl-nav-full cols-2 cols-md-3 cols-lg-4"
+                            data-owl-options="{
+                        'items': 5,
+                        'nav': false,
+                        'loop': false,
+                        'dots': true,
+                        'margin': 20,
+                        'responsive': {
+                            '0': {
+                                'items': 2
+                            },
+                            '768': {
+                                'items': 4
+                            },
+                            '992': {
+                                'items': 6,
+                                'dots': false,
+                                'nav': true
+                            }
+                        }
+                    }" id="listamasvendidos">
+
+                            <% listamasvendidos.forEach((novedad)=> { %>
+                                <div class="product text-center bcp">
+                                    <figure class="product-media">
+                                        <a
+                                            href="/Producto/<%= novedad.idproducto %>/<%= novedad.nombre %>/<%= novedad.codigobarra%>">
+                                            <img src="<%= novedad.urlfoto %>" alt="<%= novedad.nombre %>" width="280"
+                                                height="315" style="background-color: #f2f3f5;"
+                                                class="imagenproducto" />
+                                        </a>
+                                        <!--<div class="product-label-group">
+                                            <label class="product-label label-new">Nuevo</label>
+                                        </div>
+                                        <div class="product-action-vertical">
+                                            <a href="#" class="btn-product-icon btn-wishlist" title="Add to wishlist"><i
+                                                    class="d-icon-heart"></i></a>
+                                        </div>-->
+                                        <div class="product-action">
+                                            <!--<a href="#" class="btn-product btn-quickview" title="Quick View">Quick View</a>-->
+                                        </div>
+                                    </figure>
+                                    <div class="product-details">
+                                        <h3 class="product-name">
+                                            <a href="/Producto/<%= novedad.idproducto %>/<%= novedad.nombre %>/<%= novedad.codigobarra%>"
+                                                class="nombreproducto">
+                                                <%= novedad.nombre %>
+                                            </a>
+                                        </h3>
+                                        <% if(novedad.preciooferta>0){ %>
+
+                                            <div class="product-price">
+                                                <ins class="new-price">S/<span class="precioproducto"><%= novedad.preciooferta %></span>
+                                                        </ins><del class="old-price">S/<%=
+                                                        novedad.precio %></del>
+                                            </div>
+                                            <% } else {%>
+                                                <div class="product-price">
+                                                    <span class="price">S/ <span class="precioproducto">
+                                                            <%= novedad.precio %>
+                                                        </span></span>
+                                                </div>
+                                                <%} %>
+
+                                    </div>
+                                    <div class="product-details campoadd addToCart">
+                                        <div class="addToCart">
+                                            <span class="addToCart">Añadir al carrito</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <% }) %>
+
+
+                        </div>
+                    </section>
+
+
+                    <div class="row bnw">
+                        <div class="col-md-12" style="position:relative">
+                            <img src="/images/Banner_atencion_tiendas.jpg">
+                            <div style="position: absolute;top: 60%;left: 25%; width:15vw"><a
+                                    href="https://api.whatsapp.com/send?phone=51974201349&text="><img
+                                        src="/images/tienda_realplaza_pro.png"></a></div>
+                            <div style="position: absolute;top: 60%;left: 43%; width:15vw"><a
+                                    href="https://api.whatsapp.com/send?phone=51990725424&text="><img
+                                        src="/images/tienda_arenales.png"></a></div>
+                            <div style="position: absolute;top: 60%;left: 61%; width:15vw"><a
+                                    href="https://api.whatsapp.com/send?phone=51953528039&text="><img
+                                        src="/images/tienda_mega_huaral.png"></a></div>
+                            <div style="position: absolute;top: 60%;left: 79%; width:15vw"><a
+                                    href="https://api.whatsapp.com/send?phone=51990707664&text="><img
+                                        src="/images/tienda_atencion_cliente.png"></a></div>
+                        </div>
+                    </div>
+
+                    <div class="row bnm">
+                        <div class="col-md-12" style="position:relative;">
+                            <img src="/images/fondo_banner_wsp.png" style="min-height: 40vw;">
+
+                            <div style="position: absolute;top: 4%;left: -5%; width:50vw"><img
+                                    src="/images/imagen_celular.png"></div>
+                            <div style="position: absolute;top: 10%;left: 35%; width:60vw"><img
+                                    src="/images/Texto_horario.png"></div>
+                            <div style="position: absolute;top: 38%;left: 38%; width:25vw"><a
+                                    href="https://api.whatsapp.com/send?phone=51974201349&text="><img
+                                        src="/images/tienda_realplaza_pro.png"></a></div>
+                            <div style="position: absolute;top: 38%;left: 68%; width:25vw"><a
+                                    href="https://api.whatsapp.com/send?phone=51990725424&text="><img
+                                        src="/images/tienda_arenales.png"></a></div>
+                            <div style="position: absolute;top: 63%;left: 38%; width:25vw"><a
+                                    href="https://api.whatsapp.com/send?phone=51953528039&text="><img
+                                        src="/images/tienda_mega_huaral.png"></a></div>
+                            <div style="position: absolute;top: 63%;left: 68%; width:25vw"><a
+                                    href="https://api.whatsapp.com/send?phone=51990707664&text="><img
+                                        src="/images/tienda_atencion_cliente.png"></a></div>
+                        </div>
+                    </div>
+
+                    <section class="product-wrapper container mt-6 mt-md-10 pt-4 pb-8">
+                        <h2 class="title title-left mb-5">Ofertas</h2>
+                        <div class="owl-carousel owl-theme row owl-nav-full cols-2 cols-md-3 cols-lg-4"
+                            data-owl-options="{
+                        'items': 5,
+                        'nav': false,
+                        'loop': false,
+                        'dots': true,
+                        'margin': 20,
+                        'responsive': {
+                            '0': {
+                                'items': 2
+                            },
+                            '768': {
+                                'items': 4
+                            },
+                            '992': {
+                                'items': 6,
+                                'dots': false,
+                                'nav': true
+                            }
+                        }
+                    }" id="listamasvendidos">
+
+                            <% let num = 0;
+                            listaofertas.forEach((novedad)=> { 
+                                num=num+1;
+
+                                if(num<=11){
+
+                                
+                                %>
+                                
+                                <div class="product text-center bcp">
+                                    <figure class="product-media">
+                                        <a
+                                            href="/Producto/<%= novedad.idproducto %>/<%= novedad.nombre %>/<%= novedad.codigobarra %>">
+                                            <img src="<%= novedad.urlfoto %>" alt="<%= novedad.nombre %>" width="280"
+                                                height="315" style="background-color: #f2f3f5;"
+                                                class="imagenproducto" />
+                                        </a>
+                                        <!--<div class="product-label-group">
+                                            <label class="product-label label-new">Nuevo</label>
+                                        </div>
+                                        <div class="product-action-vertical">
+                                            <a href="#" class="btn-product-icon btn-wishlist" title="Add to wishlist"><i
+                                                    class="d-icon-heart"></i></a>
+                                        </div>-->
+                                        <div class="product-action">
+                                            <!--<a href="#" class="btn-product btn-quickview" title="Quick View">Quick View</a>-->
+                                        </div>
+                                    </figure>
+                                    <div class="product-details">
+                                        <h3 class="product-name">
+                                            <a href="/Producto/<%= novedad.idproducto %>/<%= novedad.nombre %>/<%= novedad.codigobarra%>"
+                                                class="nombreproducto">
+                                                <%= novedad.nombre %>
+                                            </a>
+                                        </h3>
+                                        <% if(novedad.preciooferta>0){ %>
+
+                                            <div class="product-price">
+                                                <ins class="new-price">S/<span class="precioproducto"><%= novedad.preciooferta %></span>
+                                                        </ins><del class="old-price">S/<%=
+                                                        novedad.precio %></del>
+                                            </div>
+                                            <% } else {%>
+                                                <div class="product-price">
+                                                    <span class="price">S/ <span class="precioproducto">
+                                                            <%= novedad.precio %>
+                                                        </span></span>
+                                                </div>
+                                                <%} %>
+
+                                    </div>
+                                    <div class="product-details campoadd addToCart">
+                                        <div class="addToCart">
+                                            <span class="addToCart">Añadir al carrito</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <% }
+                            }) %>
+
+
+                        </div>
+                    </section>
+
+
+
+
+                    <div class="row bdc">
+                        <div class="col-md-6 mb-4">
+                            <div
+                                class="banner banner-fixed intro-banner intro-banner1 content-middle  appear-animation-visible">
+                                <figure>
+                                    <img src="/images/Banner_videojuegos.jpg" width="100%" height="auto" alt="banner"
+                                        >
+                                </figure>
+                            </div>
+                            <div class="vermas"><a href=""><img src="/images/btn_ver_mas-04.png"></a></div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div
+                                class="banner banner-fixed intro-banner intro-banner1 content-middle  appear-animation-visible">
+                                <figure>
+                                    <img src="images/Banner_polos.jpg" width="100%" height="auto" alt="banner" >
+                                </figure>
+                            </div>
+                            <div class="vermas"><a href=""><img src="/images/btn_ver_mas-04.png"></a></div>
+                        </div>
+                    </div> 
+
+
+
+
+                </div>
+
+                <!--<div class="row">
+                    <div class="col-md-12">
+                        <img src="/images/bannerfin.jpg">
+                    </div>
+                </div>-->
+
+                <div class="row brw">
+                    <div class="col-md-12" style="position:relative">
+                        <img src="/images/footer/fondonuevo.jpg" style="min-height: 80px;"> 
+                        <div style="position: absolute;top: 35%;left: 10%; width:20vw"><a
+                                href="https://www.facebook.com/CohemGames/"><img
+                                    src="/images/footer/BTN_FB-06.png"></a></div>
+                        <div style="position: absolute;top: 35%;left: 39%; width:20vw"><a
+                                href="https://www.instagram.com/cohem.games/?hl=es"><img
+                                src="/images/footer/BTN_INSTA-06.png"></a></div>
+                        <div style="position: absolute;top: 35%;left: 68%; width:20vw"><a
+                                href="https://www.instagram.com/cohem.games/?hl=es"><img
+                                src="/images/footer/BTN_TIKTOK-06.png"></a></div>
+                        
+                    </div>
+                </div>
+
+                <div class="row brm">
+                    <div class="col-md-12" style="position:relative;">
+                        <img src="/images/fondo_banner_wsp.png" style="min-height: 20vw;">
+                        <div style="position: absolute;top: 20%;left: 18%; width:12vw"><a
+                            href="https://www.facebook.com/CohemGames/"><img
+                                src="/images/footer/BTN_FB.png"></a></div>
+                    <div style="position: absolute;top: 24%;left: 45%; width:12vw"><a
+                            href="https://www.instagram.com/cohem.games/?hl=es"><img
+                            src="/images/footer/BTN_INSTA.png"></a></div>
+                    <div style="position: absolute;top: 15%;left: 73%; width:12vw"><a
+                            href="https://www.instagram.com/cohem.games/?hl=es"><img
+                            src="/images/footer/BTN_TIKTOK.png"></a></div>
+                    </div>
+                </div>
+
+            </main>
+
+
+            <%- include('partials/footer.html'); %>
+
+    </div>
+
+
+    <%- include('partials/menumobile.html'); %>
+
+        <script src="/vendor/jquery/jquery.min.js"></script>
+        <script src="/vendor/parallax/parallax.min.js"></script>
+        <script src="/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+        <script src="/vendor/elevatezoom/jquery.elevatezoom.min.js"></script>
+        <script src="/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+        <script src="/vendor/owl-carousel/owl.carousel.min.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.1.3/axios.min.js" integrity="sha512-0qU9M9jfqPw6FKkPafM3gy2CBAvUWnYVOfNPDYKVuRTel1PrciTj+a9P3loJB+j0QmN2Y0JYQmkBBS8W+mbezg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+        <script src="/js/cohem.js"></script>
+        <script src="/js/main.js"></script>
+        <script src="/js/carrito.js"></script>
+
+</body>
+
+</html>
